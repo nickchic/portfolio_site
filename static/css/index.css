@@ -177,7 +177,7 @@ html, body{
 }
 
 /* 800 - 1023 px - 2 columns */
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 800px) and (max-width: 1023px) {
 
     html, body {
         font-size: 12pt;
@@ -215,7 +215,7 @@ html, body{
 
 }
 
-/* Over 1024 px - 2 columns
+/* Over 1024 px - 2 columns */
 @media only screen and (min-width: 1024px) {
 
     html, body {
@@ -252,7 +252,7 @@ html, body{
         padding-left: 5%;
     }
 
-}*/
+}
 
 @media only screen and (min-height: 601px) {
 

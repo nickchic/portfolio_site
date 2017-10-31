@@ -19,7 +19,7 @@
   src: local('../fonts/GothamNarrow-Light.otf');
 }
 
-p{
+p, a{
     font-family: 'GothamNarrow-Light';
     font-size: 1rem;
 }
@@ -33,38 +33,42 @@ h2{
     font-size: 1.8rem;
     font-family: 'GothamNarrow-Medium';
 }
-#dev h2{
+h3{
+    font-size: 1.6rem;
+    font-family: 'GothamNarrow-Medium';
+}
+.dev h2, .dev_small h2{
      color:#1c85c7;
      margin-bottom: 0.4rem;
 }
 
-#dev p a{
+.dev p a{
       color:#1c85c7;
 }
 
-#design h2{
+.design h2, .design_small h2{
     color:#f99c1c;
     margin-bottom: 0.4rem;
 }
 
-#design p a{
+.design p a{
     color:#f99c1c;
 }
 
-#about h2{
+.about h2{
     margin-bottom: 0.4rem;
 }
 
-#main_info p{
+.main_info p{
     font-size: 1.1rem;
     padding-left: 10px;
 }
 
-#main_info p a{
+.main_info p a{
     color:inherit;
 }
 
-#main_info h1{
+.main_info h1{
     margin-bottom: 0.4rem;
     padding: 10px 0 10px 10px;
     border-bottom: 1px solid #3a3a3a;
@@ -73,7 +77,6 @@ h2{
 /* ----- LAYOUT ------ */
 
 html, body{
-    height:100%;
     color: #3a3a3a;
     line-height: 2rem;
     letter-spacing: .05rem;
@@ -97,21 +100,134 @@ html, body{
     padding-bottom: 20px;
 }
 
-#dev, #design, #main_info, #about{
+.dev, .design, .main_info, .about, .dev_small, .design_small{
     margin-bottom: 2rem;
 }
 
-#dev p a, #main_info p a, #one-col-head p a{
+.dev p a, .main_info p a, #one-col-head p a{
     margin-right: 15px;
 }
 
 #one-col-head{
-    width:80%;
-    margin:auto;
+    width:100%;
+    text-align: center;
 }
 
 #one-col-head h1{
-    font-size: 2.5rem;
+    width:100%;
+    border-bottom: 1px solid #3a3a3a;
+    margin: auto;
+    font-size: 3rem;
+    padding-bottom: 12px;
+    margin-bottom: 10px;
+}
+#one-col-head p{
+    margin: auto;
+    width: 100%;
+    text-align: center;
+}
+#one-col-head p a{
+    margin: 0 8%;
+}
+
+.dev p a, .main_info p a, .dev_small p a, .design_small p a, .single_dev_desc p a, #design_port p a{
+    margin-right: 15px;
+}
+
+.dev h2{
+     color:#1c85c7;
+     margin-bottom: 0.4rem;
+}
+
+.dev p a{
+      color:#1c85c7;
+}
+
+.dev_small, .design_small{
+    margin-left: 10px;
+}
+
+#dev_projects{
+    display: inline-block;
+    width:100%;
+    vertical-align: top;
+    margin-bottom: 3rem;
+    overflow: scroll;
+}
+
+.single_dev_project{
+    display: block;
+    margin-top: 2.5rem;
+}
+
+.single_dev_project img{
+    width:25%;
+    display:inline-block;
+    padding-right: 2%;
+}
+
+.single_dev_desc{
+    width:71%;
+    display:inline-block;
+    vertical-align: top;
+}
+
+.single_dev_desc h3{
+    margin-bottom: 7px;
+}
+
+#one-col-foot {
+    text-align: center;
+}
+
+#one-col-foot .dev_small, #one-col-foot .design_small{
+    margin-left:0;
+    margin-right:20px;
+    display: inline-block;
+}
+
+#one-col-foot .main_info p{
+    margin-left:0;
+    margin-right:20px;
+    display: inline-block;
+}
+
+#design_port{
+    display: inline-block;
+    width:100%;
+    vertical-align: top;
+    margin-bottom: 3rem;
+}
+
+#design_port img{
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.zoom, .design_head{
+    display:inline-block;
+}
+
+.zoom{
+    width:60%;
+    text-align: right;
+}
+
+#port_control{
+    display: inline-block;
+    width:49%;
+    text-align: right;
+}
+
+#thumbs{
+    width:49%;
+    display: inline-block;
+    position: relative;
+    bottom:4px;
+}
+
+#design_port #thumbs img{
+    width:10px;
 }
 
 /*------MEDIA QUERIES-------*/
@@ -119,12 +235,17 @@ html, body{
 /* Under 480 px  - 1 column */
 @media only screen and (max-width: 480px) {
 
-    html, body {
-        font-size: 9.5pt;
+    body{
         background: #ffffff;
         background: -moz-linear-gradient(top, #f2f2f2 0%, #ffffff 50%);
         background: -webkit-linear-gradient(top, #f2f2f2 0%,#ffffff 50%);
         background: linear-gradient(to bottom, #f2f2f2 0%,#ffffff 50%);
+    }
+
+    html {
+        width:100%;
+        font-size: 9.5pt;
+        background: #ffffff;
     }
 
     #content{
@@ -132,27 +253,29 @@ html, body{
     }
 
     #left img{
-        width:200px;
-    }
-
-    #main_info h1{
-        width:200px;
-        display:none;
+        width: 60%;
+        padding: 0;
+        margin: 20px 0;
     }
 
     #right{
-        padding-left: 10px;
+        padding-left: 0;
     }
 
     #left{
-        width:320px;
+        width:100%;
         padding:0;
         margin-bottom: 2rem;
         display: block;
+        text-align: center;
     }
 
-    #main_info p{
+    .main_info p{
         padding-left: 0;
+    }
+
+    .zoom{
+        width:40%;
     }
 
 }
@@ -160,8 +283,13 @@ html, body{
 /* 481 - 799 px  - 1 columns */
 @media only screen and (min-width: 481px) and (max-width: 799px){
 
-    html, body {
+    html {
+        width:100%;
         font-size: 12pt;
+        background: #ffffff;
+    }
+
+    body{
         background: #ffffff;
         background: -moz-linear-gradient(top, #f2f2f2 0%, #ffffff 50%);
         background: -webkit-linear-gradient(top, #f2f2f2 0%,#ffffff 50%);
@@ -174,40 +302,45 @@ html, body{
     }
 
     #left img{
-        width:70%;
+        width: 60%;
+        padding: 0;
+        margin-bottom: 20px;
+        padding-top: 20px;
     }
 
-    #main_info h1{
-        width:80%;
-    }
 
     #left{
-        width: 70%;
+        width:100%;
         padding:0;
         margin-bottom: 2rem;
         display: block;
+        text-align: center;
     }
 
     #right{
-        padding-left: 10px;
-    }
-
-    #one-col-head{
-        display:inherit;
-    }
-    #main_info h1{
-        display:none;
-    }
-
-    #main_info p{
         padding-left: 0;
     }
+
+    .main_info p{
+        padding-left: 0;
+    }
+
+    .right-one-col-h2{
+        text-align: center;
+    }
+
+    .zoom{
+        width:50%;
+        text-align: right;
+    }
+
 }
 
 /* 800 - 1023 px - 2 columns */
 @media only screen and (min-width: 800px) and (max-width: 1023px) {
 
     html, body {
+        height:100%;
         font-size: 10.5pt;
         background: #ffffff;
         background: -moz-linear-gradient(top, #f2f2f2 0%, #ffffff 50%, #f2f2f2 100%);
@@ -224,7 +357,7 @@ html, body{
         width:80%;
     }
 
-    #main_info h1{
+    .main_info h1{
         width:85%;
     }
 
@@ -238,28 +371,34 @@ html, body{
     #right{
         width:69%;
         padding-left: 3%;
-        position: relative;
-        top: 70px;
+        vertical-align: top;
     }
 
-    #dev{
+    .right_about{
+        position: relative;
+        top: 72px;
+    }
+
+    .right_dev{
+        position: relative;
+        top: 75px;
+    }
+
+    .dev{
         display:inline-block;
         width:55%;
         margin-right: 2%;
         vertical-align: top;
     }
 
-    #design{
+    .design{
         display:inline-block;
         width:40%;
         vertical-align: top;
     }
 
-    #one-col-head{
-        display:none;
-    }
-    #main_info h1{
-        display:inherit;
+    #dev_projects, #design_port{
+        height:450px;
     }
 
 }
@@ -268,6 +407,7 @@ html, body{
 @media only screen and (min-width: 1024px) {
 
     html, body {
+        height:100%;
         font-size: 12pt;
         background: #ffffff;
         background: -moz-linear-gradient(top, #f2f2f2 0%, #ffffff 50%, #f2f2f2 100%);
@@ -284,7 +424,7 @@ html, body{
         width:80%;
     }
 
-    #main_info h1{
+    .main_info h1{
         width:80%;
     }
 
@@ -298,28 +438,35 @@ html, body{
     #right{
         width:69%;
         padding-left: 4%;
-        position: relative;
-        top: 21px;
+        vertical-align: top;
     }
 
-    #dev{
+    .right_about{
+        position: relative;
+        top: 101px;
+    }
+    .right_dev{
+        position: relative;
+        top: 96px;
+    }
+
+    .dev{
         display:inline-block;
         width:55%;
         margin-right: 2%;
         vertical-align: top;
     }
 
-    #design{
+    .design{
         display:inline-block;
         width:40%;
         vertical-align: top;
     }
-    #one-col-head{
-        display:none;
+
+    #dev_projects, #design_port{
+        height:550px;
     }
-    #main_info h1{
-        display:inherit;
-    }
+
 }
 
 @media only screen and (min-height: 601px) {
@@ -328,6 +475,24 @@ html, body{
         display: flex;
         flex-direction: column;
         justify-content: center;
+    }
+
+}
+
+/*---ONE COLUMN---*/
+@media only screen and (max-width: 800px) {
+
+    .two-col{
+        display:none;
+    }
+
+}
+
+/*---TWO COLUMN---*/
+@media only screen and (min-width: 799px) {
+
+    .one-col{
+        display:none;
     }
 
 }

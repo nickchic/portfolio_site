@@ -17,13 +17,11 @@ function sizeAdjust(){
 }
 
 function One_Col(){
-    $("#main_info").prependTo("#right");
-    $("#about").prependTo("#right");
+    $(".about").prependTo("#right");
 }
 
 function Two_Col(){
-    $("#main_info").appendTo("#left");
-    $("#about").appendTo("#right");
+    $(".about").appendTo("#right");
 }
 
 function Small(){
