@@ -1,19 +1,13 @@
 $(document).ready(function(){
 
-    sizeAdjust();
+    sizeAdjust()
 
-    $(window).resize(function() {
-        sizeAdjust();
-    });
+    $(window).resize(sizeAdjust);
 
 });
 
 function sizeAdjust(){
-    if ($(window).width() > 800){
-        Two_Col();
-    } else {
-        One_Col();
-    }
+    $(window).width() > 800 ? Two_Col() : One_Col()
 }
 
 function One_Col(){

@@ -5,8 +5,13 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <title>Nicholas Chicirda</title>
         <link rel="stylesheet" type="text/css" href="static/css/about.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="static/js/design_slides.js"></script>
     </head>
     <body>
+        <div id='zoom' class='invisible zoom_button'>
+            <img src='static/images/SolveSite_1.jpg' alt='pic' />
+        </div>
         <div id='content'>
             <div id='left'>
                 <img class='two-col' src='static/images/handsome.jpg'/>
@@ -31,27 +36,14 @@
             </div>
             <div id='right' class='right_dev'>
                 <h2 class='design_head'>Design Portfolio</h2>
-                <span class='zoom'><a href=''>Zoom</a></span>
+                <span class='link zoom zoom_button'>Zoom</span>
                 <div id='design_port'>
-                    <img src='static/images/SolveSite_1.jpg' alt='pic' />
+                    <img id='port_img' class='zoom_button' src='static/images/SolveSite_1.jpg' alt='pic' />
                     <div id='thumbs'>
-                        <a href=''><img src='static/images/full.png' alt='pic' /></a>
-                        <a href=''><img src='static/images/empty.png' alt='pic' /></a>
-                        <a href=''><img src='static/images/empty.png' alt='pic' /></a>
-                        <a href=''><img src='static/images/empty.png' alt='pic' /></a>
-                        <a href=''><img src='static/images/empty.png' alt='pic' /></a>
-                        <a href=''><img src='static/images/empty.png' alt='pic' /></a>
-                        <a href=''><img src='static/images/empty.png' alt='pic' /></a>
-                        <a href=''><img src='static/images/empty.png' alt='pic' /></a>
-                        <a href=''><img src='static/images/empty.png' alt='pic' /></a>
-                        <a href=''><img src='static/images/empty.png' alt='pic' /></a>
-                        <a href=''><img src='static/images/empty.png' alt='pic' /></a>
-                        <a href=''><img src='static/images/empty.png' alt='pic' /></a>
-                        <a href=''><img src='static/images/empty.png' alt='pic' /></a>
-                        <a href=''><img src='static/images/empty.png' alt='pic' /></a>
+
                     </div>
-                    <p id='port_control'><a href=''>Previous</a> <a href=''>Next</a></p>
-                    <p>This is a website and stuffing</p>
+                    <p id='port_control'><span class='link unselectable' id='prev'>Previous</span> <span class='link unselectable' id='next'>Next</span></p>
+                    <span id='port_subhead'>Title</span> - <p id='blurb'> This is a website and stuffing</p>
                 </div>
                 <div id='one-col-foot' class='one-col'>
                     <div class='dev_small'>
