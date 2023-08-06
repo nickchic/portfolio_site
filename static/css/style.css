@@ -19,22 +19,28 @@
     display: none;
 }
 
+.link{
+    cursor: pointer;
+}
+
 /* ----- TYPE ------ */
 
 @font-face {
   font-family: 'GothamNarrow-Medium';
-  src: url('../fonts/GothamNarrow-Medium.otf');
-  src: local('../fonts/GothamNarrow-Medium.otf');
+  src:
+      local('GothamNarrow-Medium.otf'),
+      url('../fonts/GothamNarrow-Medium.otf');
 }
 
 @font-face {
   font-family: 'GothamNarrow-Light';
-  src: url('../fonts/GothamNarrow-Light.otf');
-  src: local('../fonts/GothamNarrow-Light.otf');
+  src:
+      local('GothamNarrow-Light.otf'),
+      url('../fonts/GothamNarrow-Light.otf');
 }
 
 
-p, a{
+p, a, span{
     font-family: 'GothamNarrow-Light';
     font-size: 1rem;
 }
@@ -45,6 +51,7 @@ h1{
 }
 
 h2{
+    color:#1c85c7;
     font-size: 1.8rem;
     font-family: 'GothamNarrow-Medium';
 }
@@ -65,8 +72,7 @@ h3{
 }
 
 .dev h2, .dev_small h2{
-     color:#1c85c7;
-     margin-bottom: 0.4rem;
+     margin-bottom: 0.6rem;
 }
 
 .dev p a{
@@ -75,7 +81,7 @@ h3{
 
 .design h2, .design_small h2{
     color:#f99c1c;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.6rem;
 }
 
 .design p a{
@@ -83,7 +89,7 @@ h3{
 }
 
 .about h2{
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.6rem;
 }
 
 .main_info p{
@@ -91,14 +97,24 @@ h3{
     padding-left: 10px;
 }
 
-.main_info p a{
+.main_info p a, .one-col-foot_links p a{
     color:inherit;
 }
 
-.main_info h1{
+.main_info h1 {
     margin-bottom: 0.4rem;
     padding: 10px 0 10px 10px;
     border-bottom: 1px solid #3a3a3a;
+    text-decoration: none;
+    color:#3a3a3a;
+}
+
+.home_link {
+    text-decoration: none;
+}
+
+.dev_cat{
+    font-family: 'GothamNarrow-Medium';
 }
 
 /* ----- LAYOUT ------ */
@@ -132,8 +148,12 @@ html.black, body.black {
     padding-bottom: 20px;
 }
 
-.dev, .design, .main_info, .about, .dev_small, .design_small{
+.dev, .design, .one-col-foot_links, .about, .dev_small, .design_small{
     margin-bottom: 2rem;
+}
+
+.main_info {
+    margin-bottom: 0.5rem;
 }
 
 .dev p a, .main_info p a, #one-col-head p a{
@@ -150,8 +170,8 @@ html.black, body.black {
     border-bottom: 1px solid #3a3a3a;
     margin: auto;
     font-size: 3rem;
-    padding-bottom: 12px;
-    margin-bottom: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 15px;
 }
 #one-col-head p{
     margin: auto;
@@ -166,9 +186,17 @@ html.black, body.black {
     margin-right: 15px;
 }
 
+#one-col-foot .dev_small p a, #one-col-foot .design_small p a {
+    margin-right: 0;
+}
+
+#one-col-foot .dev_small p .github_link_one_col {
+    margin-right: 5px;
+}
+
 .dev h2{
      color:#1c85c7;
-     margin-bottom: 0.4rem;
+     margin-bottom: 0.6rem;
 }
 
 .dev p a{
@@ -193,12 +221,15 @@ html.black, body.black {
 }
 
 .single_dev_project img{
-    width:25%;
+    width:18%;
     display:inline-block;
-    padding-right: 2%;
+    margin-right: 4%;
+    border: solid 1px #595959;
 }
 
 .single_dev_desc{
+    position: relative;
+    top:11px;
     width:71%;
     display:inline-block;
     vertical-align: top;
@@ -218,62 +249,16 @@ html.black, body.black {
     display: inline-block;
 }
 
-#one-col-foot .main_info p{
+#one-col-foot .main_info p, #one-col-foot .one-col-foot_links p {
     margin-left:0;
     margin-right:20px;
     display: inline-block;
 }
 
-#design_port{
+#one-col-foot .main_info p{
+    margin-left:0;
+    margin-right:20px;
     display: inline-block;
-    width:100%;
-    vertical-align: top;
-    margin-bottom: 3rem;
-}
-
-#port_img {
-    margin-top: 1rem;
-    width: 100%;
-}
-
-#zoom {
-    position: absolute;
-    left: 50%;
-    width:80%;
-}
-
-#zoom img{
-    position: relative;
-    left: -50%;
-    width:100%;
-    z-index: 1;
-}
-
-.zoom, .design_head{
-    display:inline-block;
-}
-
-.zoom{
-    width:60%;
-    text-align: right;
-}
-
-#port_control{
-    display: inline-block;
-    width:49%;
-    text-align: right;
-}
-
-#thumbs{
-    width:49%;
-    display: inline-block;
-    position: relative;
-    bottom:4px;
-}
-
-#design_port #thumbs img{
-    width:10px;
-    margin-right: 7px;
 }
 
 /*------MEDIA QUERIES-------*/
@@ -295,7 +280,7 @@ html.black, body.black {
     }
 
     #content{
-        width:300px;
+        width:325px;
     }
 
     #left img{
@@ -316,8 +301,6 @@ html.black, body.black {
         text-align: center;
     }
 
-
-
     .main_info p{
         padding-left: 0;
     }
@@ -326,10 +309,51 @@ html.black, body.black {
         width:40%;
     }
 
+    #zoom {
+        position: absolute;
+        top:30%;
+    }
+
+    #port_control{
+        display: inline-block;
+        width:29%;
+        text-align: right;
+        margin-bottom: 10px;
+    }
+
+    #port_control span {
+        font-size: 0.9rem;
+    }
+
+    #thumbs{
+        width:69%;
+        display: inline-block;
+        position: relative;
+        bottom:2px;
+    }
+
+    #design_port #thumbs img{
+        width:5px;
+        margin-right: 2px;
+    }
+
+    #next{
+        margin-left: 10px;
+    }
+
+    #one-col-head h1{
+        margin-top: 30px;
+    }
+
+    .single_dev_desc{
+        top:0px;
+        font-size: 0.8rem;
+    }
+
 }
 
 /* 481 - 799 px  - 1 columns */
-@media only screen and (min-width: 481px) and (max-width: 799px){
+@media only screen and (min-width: 481px) and (max-width: 800px){
 
     html {
         width:100%;
@@ -356,7 +380,6 @@ html.black, body.black {
         padding-top: 20px;
     }
 
-
     #left{
         width:100%;
         padding:0;
@@ -377,15 +400,10 @@ html.black, body.black {
         text-align: center;
     }
 
-    .zoom{
-        width:50%;
-        text-align: right;
-    }
-
 }
 
 /* 800 - 1023 px - 2 columns */
-@media only screen and (min-width: 800px) and (max-width: 1023px) {
+@media only screen and (min-width: 801px) and (max-width: 1023px) {
 
     html, body {
         height:100%;
@@ -419,6 +437,7 @@ html.black, body.black {
     #right{
         width:69%;
         padding-left: 3%;
+        padding-top: 10px;
         vertical-align: top;
     }
 
@@ -432,21 +451,22 @@ html.black, body.black {
         top: 110px;
     }
 
-    .dev{
-        display:inline-block;
-        width:55%;
-        margin-right: 2%;
-        vertical-align: top;
+    .dev p, .design p, .dev_cat{
+        font-size: 0.95rem;
     }
 
-    .design{
+    .dev{
         display:inline-block;
-        width:40%;
         vertical-align: top;
+        width: 85%;
     }
 
     #dev_projects, #design_port{
         height:450px;
+    }
+
+    .single_dev_desc{
+        top:5px;
     }
 
 }
@@ -484,6 +504,7 @@ html.black, body.black {
     }
 
     #right{
+        padding-top: 10px;
         width:69%;
         padding-left: 4%;
         vertical-align: top;
@@ -500,19 +521,8 @@ html.black, body.black {
 
     .dev{
         display:inline-block;
-        width:55%;
-        margin-right: 2%;
         vertical-align: top;
-    }
-
-    .design{
-        display:inline-block;
-        width:40%;
-        vertical-align: top;
-    }
-
-    #dev_projects, #design_port{
-        height:550px;
+        width: 85%;
     }
 
 }
@@ -537,7 +547,7 @@ html.black, body.black {
 }
 
 /*---TWO COLUMN---*/
-@media only screen and (min-width: 799px) {
+@media only screen and (min-width: 801px) {
 
     .one-col{
         display:none;
